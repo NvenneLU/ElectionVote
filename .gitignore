@@ -7,7 +7,7 @@
 
 # dependencies
 /node_modules
-/assets/images
+/src/assets/images
 # IDEs and editors
 /.idea
 .project
