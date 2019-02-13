@@ -1,0 +1,264 @@
+.vote-content {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.vote-content.submited {
+  transition: all 0.8s ease;
+  opacity: 0;
+
+}
+
+.complete {
+  opacity: 0;
+  position: absolute;
+  min-width: 100%;
+  top: 390px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.complete i {
+  font-size: 35px;
+  color: #888;
+}
+.complete p {
+  margin-top: 0;
+  color: #888;
+}
+
+.complete.submited {
+  transition: all 0.8s ease;
+  transition-delay: 1s;
+  opacity: 1;
+}
+
+.vote-progress {
+  position: fixed;
+  padding-right: 0.5em;
+  right: 0;
+  top: calc(50% + 84px);
+  transform: translateY(-50%);
+  background-color: #003e7e;
+}
+
+.vote-progress .vote-progress-party {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #003e7e;
+  background-color: white;
+  margin: 0.5em;
+  position: relative;
+  text-align: center;
+
+
+}
+
+.vote-progress .vote-progress-party .miss-msg {
+  font-size: 15px;
+  line-height: 1em;
+  position: absolute;
+  left: -180px;
+  top: -30px;
+  background-color: #e7e7e8;
+  width: 150px;
+  transform: scale(0);
+  padding: 2px;
+}
+
+.vote-progress .vote-progress-party .miss-msg.missing {
+  animation: open 4s;
+  animation-fill-mode: forwards;
+}
+
+.vote-progress .vote-progress-party .miss-msg::after {
+  position: absolute;
+  right: -18px;
+  top: 20px;
+  transform: rotate(215deg);
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right:30px solid #e7e7e8;
+}
+
+.vote-progress .vote-progress-party span {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.vote-progress .vote-progress-party:hover span {
+  visibility: hidden;
+}
+
+.vote-progress .vote-progress-party:hover .bubble:not(.missing) {
+  visibility: hidden;
+}
+
+.vote-progress .vote-progress-party:hover .bubble.missing {
+  background-image: linear-gradient(#c1d72e, #c1d72e);
+}
+
+.vote-progress .vote-progress-party i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.vote-progress .vote-progress-party:hover i {
+  transition: all 0.2s ease;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.vote-progress .vote-progress-party .bubble {
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: linear-gradient(#ffc423, #ffc423);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 0% 0%;
+  transition: background-size .5s, color .5s;
+}
+
+.vote-progress .vote-progress-party .bubble::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 2px;
+  background-image: linear-gradient(white, white);
+  background-size: 100% 0;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  transform: translate(1px, -5px) rotate(225deg);
+
+}
+.vote-progress .vote-progress-party .bubble::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 7px;
+  width: 2px;
+  background-image: linear-gradient(white, white);
+  background-size: 100% 0;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  transform: translate(-5px, -1px) rotate(-45deg);
+
+}
+
+.vote-progress .vote-progress-party  .bubble.selected::before {
+  background-size: 100% 100%;
+  transition: background-size 0.6s ease;
+  transition-delay: 0.2s;
+}
+.vote-progress .vote-progress-party  .bubble.selected::after {
+  background-size: 100% 100%;
+  transition: background-size 0.6s ease;
+  transition-delay: 0.6s;
+}
+.vote-progress .vote-progress-party  .bubble.selected  {
+  background-size: 100% 100%;
+}
+
+.vote-progress .vote-progress-party  .bubble.missing  {
+  background-image: linear-gradient(#a30046, #a30046);
+  background-size: 100% 100%;
+}
+
+.vote-progress .vote-progress-party i.missing {
+  color: white;
+  transition: all 0.2s ease;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.vote-party {
+  width: 100%;
+  display: inherit;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.vote-content .vote-start, .vote-end  {
+
+  margin: 1em 1em;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.vote-end {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vote-start h4 {
+  margin: 1.5em;
+}
+
+.vote-start p {
+  margin: 0 1.5em 1.5em 1.5em;
+}
+
+.vote-end p {
+  margin: 1.5em;
+}
+
+.vote-end button {
+  margin: 1.5em;
+  background-color: #a30046;
+  border: none;
+  padding: 1em 3em;
+  text-transform: uppercase;
+  color: white;
+  outline: none;
+  transition: all 0.8s ease;
+}
+
+.vote-end button:hover {
+  background-color: #bc586f;
+}
+
+
+.vote-content h3 {
+  margin-left: 1em;
+}
+li {
+  color: #666;
+}
+
+@media only screen and (min-width: 768px) {
+  .vote-end {
+    flex-direction: row;
+  }
+
+  .vote-end button {
+    margin-right: 3em;
+  }
+}
+
+@keyframes open {
+0% { transform: scale(0); }
+10% { transform: scale(1); }
+90% { transform: scale(1); }
+100% { transform: scale(0); }
+}

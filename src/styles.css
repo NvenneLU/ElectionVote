@@ -1,1 +1,119 @@
 /* You can add global styles to this file, and also import other style files */
+
+h1, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  color: #003e7e;
+}
+
+p, h2, h3 {
+  color: #666;
+}
+
+body {
+  font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f2f4f6;
+  width: 100%;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.vote-row {
+  margin-left: -20px;
+}
+
+.vote-row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* For mobile phones: */
+[class*="vote-col-"] {
+  width: 100%;
+  float: left;
+  padding: 15px;
+}
+
+@media only screen and (min-width: 750px) {
+  /* For tablets: */
+  .vote-col-s-1 {width: 8.33%;}
+  .vote-col-s-2 {width: 16.66%;}
+  .vote-col-s-3 {width: 25%;}
+  .vote-col-s-4 {width: 33.33%;}
+  .vote-col-s-5 {width: 41.66%;}
+  .vote-col-s-6 {width: 50%;}
+  .vote-col-s-7 {width: 58.33%;}
+  .vote-col-s-8 {width: 66.66%;}
+  .vote-col-s-9 {width: 75%;}
+  .vote-col-s-10 {width: 83.33%;}
+  .vote-col-s-11 {width: 91.66%;}
+  .vote-col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .vote-col-m-1 {width: 8.33%;}
+  .vote-col-m-2 {width: 16.66%;}
+  .vote-col-m-3 {width: 25%;}
+  .vote-col-m-4 {width: 33.33%;}
+  .vote-col-m-5 {width: 41.66%;}
+  .vote-col-m-6 {width: 50%;}
+  .vote-col-m-7 {width: 58.33%;}
+  .vote-col-m-8 {width: 66.66%;}
+  .vote-col-m-9 {width: 75%;}
+  .vote-col-m-10 {width: 83.33%;}
+  .vote-col-m-11 {width: 91.66%;}
+  .vote-col-m-12 {width: 100%;}
+
+  .vote-row {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  /* For desktop: */
+  .vote-col-l-1 {width: 8.33%;}
+  .vote-col-l-2 {width: 16.66%;}
+  .vote-col-l-3 {width: 25%;}
+  .vote-col-l-4 {width: 33.33%;}
+  .vote-col-l-5 {width: 41.66%;}
+  .vote-col-l-6 {width: 50%;}
+  .vote-col-l-7 {width: 58.33%;}
+  .vote-col-l-8 {width: 66.66%;}
+  .vote-col-l-9 {width: 75%;}
+  .vote-col-l-10 {width: 83.33%;}
+  .vote-col-l-11 {width: 91.66%;}
+  .vote-col-l-12 {width: 100%;}
+  .vote-row {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1768px) {
+  /* For desktop: */
+  .vote-col-1 {width: 8.33%;}
+  .vote-col-2 {width: 16.66%;}
+  .vote-col-3 {width: 25%;}
+  .vote-col-4 {width: 33.33%;}
+  .vote-col-5 {width: 41.66%;}
+  .vote-col-6 {width: 50%;}
+  .vote-col-7 {width: 58.33%;}
+  .vote-col-8 {width: 66.66%;}
+  .vote-col-9 {width: 75%;}
+  .vote-col-10 {width: 83.33%;}
+  .vote-col-11 {width: 91.66%;}
+  .vote-col-12 {width: 100%;}
+  .vote-row {
+    margin-left: 0;
+  }
+}

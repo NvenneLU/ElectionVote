@@ -1,0 +1,19 @@
+{
+  "group0": [
+    {"name": "Jacob Fielding", "id": "1", "party": "0", "image": "./assets/images/noimg.png", "adjustImg": true, "content": "<p>Testing</p>"},
+    {"name": "Eric Chappell", "id": "2", "party": "0", "image": "./assets/images/EricChappell.png", "content": ""}
+  ],
+  "group1": [
+    {"name": "Cory Clark", "id": "3", "party": "1", "image": "./assets/images/noimg.png", "adjustImg": true, "content": ""},
+    {"name": "Matthew Keith", "id": "4", "party": "1", "image": "./assets/images/MatthewKeith.png", "content": ""}
+  ],
+  "group2": [
+    {"name": "Thomas Cook", "id": "5","party": "2", "image": "./assets/images/ThomasCook.jpg", "content": ""},
+    {"name": "Katlyn Kotila", "id": "6", "party": "2", "image": "./assets/images/KatlynKotila.png", "content": ""}
+  ],
+  "group3": [
+    {"name": "Ester Nabatanzi", "id": "7", "party": "3", "image": "./assets/images/EstherNabatanzi.jpg", "content": ""},
+    {"name": "Tomas Antolin Grant", "id": "8", "party": "3", "image": "./assets/images/TomasAntolinGrant.png", "content": ""},
+    {"name": "Juke Aguer", "id": "9", "party": "3", "image": "./assets/images/JukeAguer.png", "content": ""}
+  ]
+}

@@ -1,0 +1,23 @@
+<div class="voter-card fill" [class.selected]="selected">
+  <header>
+    <div class="avatar" (click)="moreInfo()">
+      <div [class.selected]="selected" class="glow"></div>
+      <div class="img">
+        <img [src]="image" [class.adjust]="adjustImg" alt="Avatar" />
+      </div>
+    </div>
+    <h3>{{name}}</h3>
+  </header>
+  <div class="moreInfo" [class.show]="modalOpen">
+    <i class="far fa-window-close" (click)="closeModal()"></i>
+    <div class="img">
+      <img [src]="image" [class.adjust]="adjustImg" alt="Avatar" />
+    </div>
+    <h1>{{name}}</h1>
+    <ng-content></ng-content>
+  </div>
+  <footer>
+    <p>Want to know more about this candidate? <br> <a (click)="moreInfo()">Click here</a></p>
+    <button (click)="select()">Select this candidate</button>
+  </footer>
+</div>

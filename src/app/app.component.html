@@ -1,20 +1,121 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="complete" [class.submited]="complete">
+  <i class="fas fa-check"></i>
+  <h2>Your ballot has officially been submitted.</h2>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="vote-content" #content [class.submited]="complete">
+  <div class="vote-progress">
+    <div class="vote-progress-party" (click)="scrollTo('0')"><div [class.missing]="missing[0]" class="miss-msg">Please Select President</div><div class="bubble" [class.selected]="selected[0]" [class.missing]="missing[0]"></div><span>1</span><i class="fas fa-arrow-up" [class.missing]="missing[0]"></i></div>
+    <div class="vote-progress-party" (click)="scrollTo('1')"><div [class.missing]="missing[1]" class="miss-msg">Please Select Policy and Advocacy</div><div class="bubble" [class.selected]="selected[1]" [class.missing]="missing[1]"></div><span>2</span><i class="fas fa-arrow-up" [class.missing]="missing[1]"></i></div>
+    <div class="vote-progress-party" (click)="scrollTo('2')"><div [class.missing]="missing[2]" class="miss-msg">Please Select Student Life</div><div class="bubble" [class.selected]="selected[2]" [class.missing]="missing[2]"></div><span>3</span><i class="fas fa-arrow-up" [class.missing]="missing[2]"></i></div>
+    <div class="vote-progress-party" (click)="scrollTo('3')"><div class="bubble" [class.selected]="selected[3]"></div><span>4</span><i class="fas fa-arrow-up"></i></div>
+  </div>
+
+  <h3 id="0">President</h3>
+  <div class="vote-row">
+    <div class="vote-col-6 vote-col-l-6 vote-col-s-6">
+      <app-voter candidateID="1" name="Jacob Fielding" party="0" image="./assets/images/JacobFielding.png" >
+
+        <p>Hey Laurentian, my name is Jacob Fielding, I am 20 years old, currently enrolled in Political Science, and I am running to be your next SGA president. Throughout my life, I’ve always had a passion for leadership, governance, and advocacy, and I feel serving you as president is the next chapter in the story of my leadership; to give you, the student body, a better, more genuine experience at Laurentian.</p>
+        <p>I currently serve as an SGA senator and sit on the Board of Directors. I have also worked on multiple federal, provincial, and municipal campaigns, along with assisting an array of public servants, this gives me an unmatched experience in politics and into the political world.</p>
+        <p>My family has a long history of supporting our school, and I feel as though it is my turn to “take the torch”, and bring positive and lasting change to our school and association. Given the current political climate, SGA needs someone who will stand up for us, for our rights as students, while also ensuring that students are enjoying their time at Laurentian, and receiving the many benefits that come with being part of the SGA.</p>
+        <p>My experiences as a student belonging to the LGBT community as well as having an indigenous identity have taught me that not all students are the same, and have different needs. This association must accommodate and respect the minority populations of Laurentian, as the diversity of our association is what makes us special.</p>
+
+      </app-voter>
+
+    </div>
+    <div class="vote-col-6 vote-col-l-6 vote-col-s-6">
+      <app-voter candidateID="2" name="Eric Chappell" party="0" image="./assets/images/EricChappell.png" >
+        <h4>Dear students,</h4>
+        <p>My name is Eric Chappell, and I am a student just like you. This is my third year in Business Administration, and throughout my degree, I have lived the many issues that students are facing throughout university. </p>
+        <p>I was the first student to transfer to the north and settle here in Sudbury when the Laurentian Barrie campus closed. Then, I started working with the university to make the rest of the Barrie transfer students’ lives easier. After that, I realized that I was capable of recognizing issues, and making positive change for students.</p>
+        <p>I earned my seat on the university Senate and the SGA Board of Directors in my second year. Those seats allowed me to achieve amazing things for students. I also helped advocate for the first update to the accessibility policy that the university saw in 20 years. Last year, I put my name forward for SGA president. I was unsuccessful in the race for president, but I grew and continued to be engaged in advocacy for students without having a title at the SGA.</p>
+        <p>This year, I am again a member of the university senate as the 2018-2019 SGA president’s designate. I also represent students on Laurentian’s Board of Governors. I believe that I have the right qualifications for the role of SGA president. Now, I ask that students put their trust in me to represent them in a time when they need it the most.</p>
+
+      </app-voter>
+    </div>
+
+
+  </div>
+  <h3 id="1">Vice-President Policy and Advocacy</h3>
+  <div class="vote-row">
+    <div class="vote-col-6 vote-col-l-6 vote-col-s-6">
+      <app-voter candidateID="5" name="Thomas Cook" party="1" image="./assets/images/ThomasCook.jpg" >
+        <p>My name is Thomas Cook and I am in second year of the Law and Justice program. </p>
+        <p>As your VP of policy and advocacy, I intend to work with you, the students, to find solutions to the problems that face our student body and collectively enhance the SGA for the school community. </p>
+        <p>Before meaningful change can be made, I believe an improvement in students’ knowledge of the SGA and exactly how its policies affect them, is crucial. This would allow us to centre policy around what the combined student body deems important and refocus the SGA towards real student issues. I am committed to engaging in continual consultation with, and active advocacy of, all SGA members. By creating a bilateral and collaborative relationship with the University Administration and Government officials, I will push for policy that is evidence-based and student-driven, representing the best interests of all students. </p>
+        <p>The greatest issue facing our community surrounds the growing concern towards Ford’s changes to post-secondary education. I am devoted to putting pressure on government officials to make a decision that represents students’ best interests, and to creating an action plan to address these concerns and ensure that there are minimal impacts on access to student services. </p>
+        <p>I am the most qualified candidate for this position. I have a strong understanding of policy and advocacy. I have a strong desire to improve the SGA. I am a strong new face for the SGA, and with a new face, comes new ideas. </p>
+
+      </app-voter>
+
+    </div>
+    <div class="vote-col-6 vote-col-l-6 vote-col-s-6">
+      <app-voter candidateID="6" name="Katlyn Kotila" party="1" image="./assets/images/KatlynKotila.png" >
+        <p>Hello Laurentian! My name is Katlyn Kotila and I want to be your next Vice President of Policy and Advocacy.</p>
+        <p>I am currently a Second-Year student double majoring in Political Science and Communication Studies. Throughout my time at Laurentian I have had the opportunity to be involved in student governance in a number of different ways. I have sat on the SGA-AGÉ Board of Directors, Laurentian Senate and Faculty Council for the Faculty of Arts. I have attended numerous rallies such as the Women’s March and Rally Against OSAP Cuts. I also represented the SGA at the CFS-FCÉÉ National General Meeting this fall. What sets me apart is that you will not find another candidate that is more passionate and has the same amount of experience and connections as I do. If elected VPPA I want to regularly consult with groups on and off campus to ensure no voices are left unheard, work with governing bodies both within Laurentian and in the community to make sure students are not left behind, promote student engagement and make it more accessible for all students, make sustainability a priority, and most importantly always put the students' needs first! I also intend to advocate for causes students care about such as the cuts to OSAP and attack on student democracy, indigenous rights, mental health, fairness for International Students, and other important causes. I can't wait to meet everyone, and I promise if elected that this will be the year of the students! #TrustSGA</p>
+
+      </app-voter>
+    </div>
+  </div>
+  <h3 id="2">Vice-President Student Life</h3>
+  <div class="vote-row">
+    <div class="vote-col-4 vote-col-l-4 vote-col-s-6">
+      <app-voter candidateID="7" name="Ester Nabatanzi" party="2" image="./assets/images/EstherNabatanzi.jpg" >
+        <p>My name is <b>Esther Nabatanzi</b>, a fourth-year student in biomedical biology. I am a varsity athlete for Laurentian Track and Field. As a member of the Student General Association, I offer my candidacy for the position of Vice President of Student Life. </p>
+        <p>In my four years as a member of the SGA, I’ve noticed that more can be done to improve student life at Laurentian, beginning with frosh week and carrying on throughout the school year. Many students are not aware of things happening  around campus, and they miss out on numerous opportunities. If elected Vice President of Student Life, I would  seek to ensure that students are aware, excited and engaged in the different events that are going on around campus and that they enjoy their university experience. In particular, I want to emphasize:</p>
+        <ul>
+          <li>getting student feedback on how the SGA can better serve the student body</li>
+          <li>ensuring a successful homecoming</li>
+          <li>publicizing and increasing attendance at athletic events</li>
+          <li>promoting student clubs and societies</li>
+          <li>offering opportunities for student interaction and networking</li>
+          <li>engaging international students in all campus events.</li>
+        </ul>
+        <p>Laurentian and its Student General Association have potential to supersede expectations in areas of student life and academic service for students. I believe that as Vice President, together our team would be able to have a successful year where students are engaged and able to benefit from activities and events hosted by the SGA.</p>
+      </app-voter>
+    </div>
+    <div class="vote-col-4 vote-col-l-4 vote-col-s-6">
+      <app-voter candidateID="8" name="Tomas Antolin Grant" party="2" image="./assets/images/TomasAntolinGrant.png" >
+        <p>Hello Laurentian University,</p>
+        <p>my name is Tomas Antolin Grant and I want to be your next Vice President of Student Life. You have a voice and I am here to listen. Tell me what you want to see at Laurentian next year, the activities you want to do and what songs make you move! Through sitting on Senate and the SGA Board of Directors, as well as holding many other positions, I have been able to advocate for students at Laurentian for over two years now. Making sure that the opinions of students are always considered. I can’t wait to get to know more of you and to connect with any of the students I have yet to meet. I am here to serve each and every one of you and make your University experience the best it can be. Do you have a question? I will help you find the answer. Do you want to start something new at Laurentian? Let’s make it happen. The students have continuously been let down and it’s time to change that with hard work and good leadership. I am here to show you how to find the services you need and support you as best as I can. Few other students have the same amount of experience I do and I know what needs to be done to make next year, the best yet. Let’s make memories that will last a lifetime! #TrustSGA</p>
+      </app-voter>
+    </div>
+    <div class="vote-col-4 vote-col-l-4 vote-col-s-6">
+      <app-voter candidateID="9" name="Juke Aguer" party="2" image="./assets/images/JukeAguer.png" >
+        <p>Hey there!</p>
+        <p>Juke here. And I am running for Vice President Student Life, for the SGA-AGÉ! Firstly, because of recent Provincial Government changes (Ford.) I know for certain, that how I approach this year’s campaign will have to be different. The biggest way that new legislation WILL impact us, will be with optional opt-out(s). I fully agree, that anyone should be able to opt-out of services they don’t want. An dI completely understand and sympathize, with those who do leave. I myself, have also struggled with our union, both as the head of a club, and as a student-athlete just trying to get by. I understand how elusive the SGA seems to most, how it has a “less than ideal track record” when concerning the HANDLING OF OUR FUNDS.</p>
+        <p>Our SGA has LOST OUR TRUST, and has no right to ask for it. It must become more transparent with how THEY, handle YOUR money. They need to let us know exactly, what we are paying for. With me elected, projects will be more transparent, and more applicable to the average student. I want to have the student body, more involved when it comes to the approval of large budget decision. I’d like the reason that you pay into this union, to be because this union REPRESENTS YOU and YOUR wants.</p>
+      </app-voter>
+    </div>
+  </div>
+  <h3 id="3">Senator</h3>
+  <div class="vote-row">
+    <div class="vote-col-6 vote-col-l-6 vote-col-s-6">
+      <app-voter candidateID="3" name="Cory Clark" party="3" multiple="true" image="./assets/images/CoryClark.png" >
+        <p>
+          Hi my name is Cory Clark. I am in my first year of ADVL with Concurrent Education and I am running to be a senator for the 2019/2020 school year. My program is one of the six branches of Human Kinetics offered at Laurentian University. In my first year here at Laurentian University I have gotten involved by joining the SGA/AGE Board as the First Year Representative. At my high school I spent two years on The Students’ Council, as the Athletic Representative and the Grade 12 Representative. Through my experiences on school councils I gained good knowledge to aid me as Senator because I have been given the opportunities to see part of what being a Senator is. Although there is a lot more behind what a Senator has to do having just a little bit of knowledge will go a long way. Another thing that has helped to prepare me for Senator is my Outdoors class during high school, because I was in the first class to be a part of my schools program so not all of the logistics had been worked out. The reason this will help for Senator is because one of the roles a Senator takes on is helping make decisions about what happens around campus and I helped in a similar way with my Outdoors class for improvements to be done for future years and even for my year. Thank you for your consideration. Don’t be sorry, vote Cory!!
+        </p>
+
+
+      </app-voter>
+
+    </div>
+    <div class="vote-col-6 vote-col-l-6 vote-col-s-6">
+      <app-voter candidateID="4" name="Matthew Keith" party="3" multiple="true" image="./assets/images/MatthewKeith.png" >
+        <p>Hey SGA members! I’m Matthew Keith and I’m rerunning to be your 2019-2020 SGA Senator.</p>
+        <p>After completing my first two years at Laurentian and having been on the SGA Board of Directors last year, I have determined the strengths and weaknesses of the SGA and the facilities and I am determined to change the issues I have found.</p>
+        <p>I am a third-year honours BA Psychology student with aspirations to go to medical school to specialize in psychiatry. I currently live in a small community between Sudbury and North Bay called Lavigne. I am an active volunteer in my hometown of Lavigne, with the local community centre. I am also an active volunteer with the Alzheimer’s Society here in Sudbury. I also work as a mentor with the Student Life Mentor Program at LU.</p>
+        <p>In the past, I have been employed as a lifeguard, swimming instructor, and an aquatic supervisor with the City of Brampton Aquatics Department. My work during my employment with the City of Brampton was highly commended by supervisors and coworkers due to my relentless work ethic. Aside from my employment skills, I am reliable, trustworthy, self-motivated, dedicated, and professional. Ask anyone and they’ll tell you I have worked hard my entire life to be highly successful. I consider myself to be an outstanding worker who works to satisfy the needs of everyone.</p>
+        <p>If you have any ideas or concerns, please contact me at <a href="mailto:mkeith@laurentian.ca">mkeith@laurentian.ca</a> and I will present them to the SGA board.</p>
+
+      </app-voter>
+    </div>
+  </div>
+  <section class="vote-end">
+    <p>You must select a candidate for each category.<br>
+    Once you have finished, click to submit your ballot.<br>
+    <b>Voting is final upon submission.</b></p>
+    <button (click)="submit()">Submit ballot</button>
+  </section>
+</div>

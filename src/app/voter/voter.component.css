@@ -1,0 +1,228 @@
+.voter-card {
+  box-sizing: border-box;
+  min-width: 312px;
+  height: 450px;
+  box-shadow: ;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+
+
+.fill {
+  box-shadow: 1px 2px 15px 3px rgba(0, 0, 0, .05), inset 0 -500px 0 0 rgba(0,62,126,0.0);
+  transition: all ease 0.8s;
+}
+
+.fill.selected {
+  box-shadow: 1px 2px 15px 3px rgba(0, 0, 0, .05), inset 0 -500px 0 0 rgba(0,62,126,0.5);
+}
+
+.voter-card header img {
+
+}
+
+
+.voter-card header {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5em 1.5em 0 1.5em;
+}
+
+.voter-card header .avatar {
+  position: relative;
+  border-radius: 50%;
+  transition: box-shadow 0.3s ease;
+}
+
+.voter-card:not(.selected) header .avatar:hover {
+  box-shadow: 1px 1px 15px 4px rgba(0,62,126,0.5);
+}
+
+.voter-card header .avatar .img img {
+  width: 215px;
+  height: auto;
+}
+
+.voter-card header .avatar .img img.adjust {
+  height: 215px;
+}
+
+.voter-card header .avatar .img {
+  display: block;
+  height: 215px;
+  width: 215px;
+  border-radius: 50%;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+.voter-card header .avatar .glow {
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,62,126,1), rgba(0,62,126,1));
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 0% 0%;
+  transition: background-size .5s, color .5s;
+}
+
+.voter-card header .avatar .glow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 12px;
+  background-image: linear-gradient(white, white);
+  background-size: 100% 0;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  transform: translate(2px, -27px) rotate(225deg);
+
+}
+.voter-card header .avatar .glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 35px;
+  width: 12px;
+  background-image: linear-gradient(white, white);
+  background-size: 100% 0;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  transform: translate(-24px, -10px) rotate(-45deg);
+
+}
+
+.voter-card header .avatar  .glow.selected::before {
+  background-size: 100% 100%;
+  transition: background-size 0.6s ease;
+  transition-delay: 0.2s;
+}
+.voter-card header .avatar  .glow.selected::after {
+  background-size: 100% 100%;
+  transition: background-size 0.6s ease;
+  transition-delay: 0.6s;
+}
+.voter-card header .avatar  .glow.selected  {
+  background-size: 100% 100%;
+}
+.voter-card header h3 {
+  font-weight: normal;
+  font-size: 1.5em;
+  color: #003e7e;
+  vertical-align: middle;
+}
+
+.voter-card footer {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.voter-card footer p {
+  margin-top: 0;
+  text-align: center;
+}
+.voter-card footer button {
+  margin-bottom: 2em;
+  padding: 1em 1em;
+  background-color: rgba(0,62,126,1);
+  border: 0;
+  text-transform: uppercase;
+  color: white;
+  outline: none;
+  transition: background-color 0.6s ease;
+}
+
+.voter-card footer button:hover {
+  background-color: #5d73a6;
+}
+
+.voter-card footer p a {
+  text-decoration: none;
+  color: #003e7e;
+  cursor: pointer;
+
+}
+
+.voter-card .moreInfo {
+  position: fixed;
+  top: 84px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 84px);
+  transition: all 0.6s ease;
+  padding: 3em;
+  background-color: white;
+  z-index: 999;
+  transform: translateX(-100%);
+  overflow: scroll;
+}
+
+.voter-card .moreInfo i {
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.voter-card .moreInfo .img {
+  display: block;
+  height: 215px;
+  width: 215px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.voter-card .moreInfo .img img {
+  width: 215px;
+  height: auto;
+}
+
+.voter-card .moreInfo .img img.adjust {
+  height: 215px;
+}
+
+.voter-card .moreInfo i:hover {
+  transform: scale(1.2);
+}
+
+
+
+.voter-card .moreInfo.show {
+  transform: translateX(0);
+
+}
+
+
+@media only screen and (min-width: 992px) {
+  .voter-card .moreInfo {
+    position: fixed;
+    top: 84px;
+    left: 260px;
+    width: calc(100% - 260px);
+    height: calc(100% - 84px);
+    transition: all 0.6s ease;
+    padding: 3em;
+    background-color: white;
+    z-index: 999;
+    transform: translateX(-100%);
+    overflow: scroll;
+  }
+
+}
